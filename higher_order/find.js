@@ -2,24 +2,24 @@
 // look through every item in an array and find the item
 // that matches a condition in the callback.
 
-var list = ["Apples", "Feta Cheese", "Avocado", "Milk", "Tomatoes", "Hummus"];
+var users = [
+  {id: 1, name: "Bob"},
+  {id: 2, name: "Sailor Moon"},
+  {id: 3, name: "Daffy Duck"},
+  {id: 4, name: "Billy"},
+]
 
-// Task: Find the first item in the list that starts with A
+// Find the first user who's name starts with B
 
-
-var itemWithA = list.find(function(item) {
-  // if you return true out of the callback, the item is found!
-  return item.startsWith("A");
+var userWithB = users.find(function(userObj) {  // <--- callback function (anonymous)
+  return userObj.name.startsWith("B")
 });
-console.log(itemWithA);
 
+console.log(userWithB["name"]);
 
-// // with forEach
-// var itemWithA;
-// list.forEach(function(item) {
-//   if(typeof itemWithA === "undefined" && item.startsWith("A")) {
-//     itemWithA = item;
-//   }
-// })
-// console.log(itemWithA);
+// Get all users whose name starts with B
+var usersWithB = users.filter(function(userObj) {  // <--- callback function (anonymous)
+  return userObj.name.startsWith("B")
+});
+console.log(usersWithB);
 

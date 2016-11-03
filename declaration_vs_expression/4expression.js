@@ -8,3 +8,16 @@ function foo(){
     };
 }
 console.log(foo());
+
+
+// function foo(){
+//     var bar;
+//     return bar();
+//     bar = function() {
+//         return 3;
+//     };
+//     bar = function() {
+//         return 8;
+//     };
+// }
+// console.log(foo());

@@ -4,17 +4,23 @@
 //   - returns another array with the transformation applied to all elements
 
 var names = ["bob", "anna", "don", "david"]
-// We want: ["Bob", "Anna", "Don", "David"]
+// We want: [{name: "bob"}, {name: "anna"}, ...]
 
-var upcaseNames = names.map(function(item) {
-  return item + "!";
+// ES5
+var new_array = names.map(function(item) { // anonymous
+  return { name: item } // the return value from map is placed in a new array
 })
 
-// // Same as above with forEach
-// var upcaseNames = [];
-// names.forEach(function(item) {
-//   upcaseNames.push(item + "!");
-// });
+var new_array = names.map(createObject);
 
-console.log("upcaseNames ", upcaseNames);
-console.log("names ", names);
+function createObject(item) {
+  return { name: item } // the return value from map is placed in a new array
+}
+
+// // ES6
+// var new_array = names.map((item) => {
+//   return { name: item }
+// })
+
+console.log(new_array);
+

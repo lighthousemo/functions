@@ -1,18 +1,40 @@
-// function can be assigned to a variable.
-
-var sayHello = function(name) {
-  return "Hello " + name;
+function doA() {
+  console.log("A");
 }
 
-console.log(sayHello("Bob"));
+doA()
 
-function excited(punctuation, greeterFunction) {
-  console.log(greeterFunction("Anna") + punctuation);
-}
-excited("!!!", sayHello);
-
-var sayKonichiwa = function(name) {
-  return "Konichiwa " + name;
+var doB = function() {
+  console.log("B");
 }
 
-excited("!", sayKonichiwa);
+doB()
+
+var userFunctions = {
+  defaultUser: { name: "Anonymous" },
+  createUser: function(rawData) {
+    if(rawData) {
+      console.log("Creating user with ", rawData);
+    } else {
+      console.log("Creating user default ", this.defaultUser); // userFunctions
+    }
+  },
+  updateUser: function(rawData) {
+    console.log("Updating user with ", rawData);
+  },
+}
+
+var otherFunctions = {
+  calculateBenefits: function(user) {
+    console.log("Calculate benefits")
+  }
+}
+
+userFunctions.createUser({name: "Bob"})
+userFunctions.createUser()
+
+
+
+
+
+

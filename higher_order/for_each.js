@@ -2,10 +2,12 @@
 
 var list = ["Apples", "Feta Cheese", "Milk", "Tomatoes", "Hummus"];
 
-var printListLetter = function(item, index, array){
-  console.log("array is ", array);
-  console.log(item[0], index);
+// Goal: console.log each element in the array, appending a !
+list.forEach(printOut);
+
+function printOut(item) {
+  console.log(item + "!");
 }
 
-// we want to console.log the first letter of every item on the list.
-list.forEach(printListLetter)
+
+
